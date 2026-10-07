@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>7 Cloud Engineering — Site design, explained and prepared for review</title>
+  <meta name="description" content="7 Cloud Engineering prepares site-specific septic and stormwater designs for permit review, and publishes the criteria behind the options. Septic and stormwater are available now.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f3f0e8' stroke='%231b1916'/%3E%3Ctext x='7' y='23' font-family='Georgia' font-size='20' fill='%231b1916'%3E7%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!--
+    HOW TO ADD A SERVICE OR APP WITHOUT REWRITING THIS PAGE
+    1. Service card — copy an <article class="service-card"> in #services.
+       Status on a public card is Live only. Also add a <option> in the intake form.
+    2. App card — copy the commented <article class="app-card"> in #apps,
+       fill inputs / returns / refuses, and remove the empty state.
+       Link it from "See what is live" only after it can show inputs, limits,
+       and what a reviewer would still require.
+    3. Status row — add it to the owner catalog at the bottom of this file.
+       Do not add a public row until status is Live.
+    Do not publish unnamed rows, prices, testimonials, license numbers, or a sizing calculator.
+  -->
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top">
+        <span class="mark" aria-hidden="true">7</span>
+        <span>
+          <span class="brand-name">7 Cloud Engineering</span>
+          <span class="brand-label">Site design, explained and prepared for review</span>
+        </span>
+      </a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <a href="#services">Design services</a>
+        <a href="#apps">Design apps</a>
+        <a href="#how">How a design is chosen</a>
+        <a href="#receive">What you receive</a>
+        <a class="nav-start" href="#start">Start a project</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap">
+        <p class="eyebrow">Septic design and stormwater design — more site-design tools as they are ready</p>
+        <h1>See what the site allows. Then get a design a reviewer can check.</h1>
+        <p class="subhead">7 Cloud Engineering prepares site-specific designs for permit review and publishes the criteria behind the options. Septic and stormwater are available now. Other design apps will be added only when they are actually usable.</p>
+        <div class="actions">
+          <a class="button" href="#start">Start a project</a>
+          <a class="button secondary" href="#services">See what is live</a>
+        </div>
+        <div class="trust">
+          <p>A design app can narrow options. It does not replace soils, a survey, or the responsible professional.</p>
+          <p>Service area: <span class="fill">[states or counties]</span>. Responsible professional: <span class="fill">[name, license type, license number]</span>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" aria-labelledby="services-title">
+      <div class="wrap">
+        <p class="section-kicker">What is live</p>
+        <h2 id="services-title">Available now</h2>
+        <div class="cards">
+          <!-- SERVICE CARD. Copy this article to add a live service. Public status is Live only. -->
+          <article class="card service-card">
+            <span class="status">Live</span>
+            <h3>On-site septic design</h3>
+            <p>A permit-oriented design for a system that treats and disperses wastewater on the property, based on soils, water table, setbacks, daily flow, and local health-department rules.</p>
+            <p class="receives">You receive the system type, layout, sizing basis, details, and a short account of why the other options were set aside.</p>
+          </article>
+          <article class="card service-card">
+            <span class="status">Live</span>
+            <h3>Stormwater design</h3>
+            <p>A design for how rainfall is collected, conveyed, treated, and released under the local drainage and water-quality rules.</p>
+            <p class="receives">You receive a drainage concept or permit-level set matched to the written scope, not a full site-civil package unless the agreement says so.</p>
+          </article>
+        </div>
+        <p class="pair-note">Need both? Say so at intake. We will write two scopes.</p>
+        <div class="link-row">
+          <a href="#start" data-service="septic">Scope a septic design</a>
+          <a href="#start" data-service="stormwater">Scope a stormwater design</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="room" aria-labelledby="room-title">
+      <div class="wrap">
+        <p class="section-kicker">Room to grow</p>
+        <h2 id="room-title">What this practice is set up to add</h2>
+        <p class="lede">The homepage is organized as a list, not a slogan. A new design service is added here when we can prepare it under our license and a defined scope. A new design app is added in the next section when it can take real site inputs and show its limits. Until then, it is not offered.</p>
+        <table class="status-table">
+          <thead>
+            <tr>
+              <th scope="col">Item</th>
+              <th scope="col">Status</th>
+              <th scope="col">What a visitor can do</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Public rows are Live only. Unnamed and not-offered rows stay in the owner catalog. -->
+            <tr>
+              <td>On-site septic design</td>
+              <td>Live</td>
+              <td><a href="#start" data-service="septic">Request a scope</a></td>
+            </tr>
+            <tr>
+              <td>Stormwater design</td>
+              <td>Live</td>
+              <td><a href="#start" data-service="stormwater">Request a scope</a></td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="next-line">Next: Further site-design services and apps will appear in this list when they are ready to use. We do not take deposits for a tool that is not live.</p>
+      </div>
+    </section>
+
+    <section id="apps" aria-labelledby="apps-title">
+      <div class="wrap">
+        <p class="section-kicker">Design apps</p>
+        <h2 id="apps-title">Design apps</h2>
+        <p class="lede">Apps on this site are for exploring options and criteria. They are not permit drawings. A result is a starting point for a scoped design, or a way to see why a concept fails, not a document you can submit.</p>
+
+        <!--
+          APP CARD — paste and fill only when an app is actually usable. Then remove .empty.
+          <article class="card app-card">
+            <span class="status">Live</span>
+            <h3>[app name]</h3>
+            <p><strong>What it asks for:</strong> [inputs]</p>
+            <p><strong>What it returns:</strong> feasible options, the criteria that removed the others, and what a designer still has to verify.</p>
+            <p class="receives"><strong>What it does not do:</strong> size a final system, check a soil log, or produce a sealed plan.</p>
+            <p class="card-foot"><a class="button small" href="[app url]">Open the app</a></p>
+          </article>
+        -->
+
+        <div class="cards">
+          <article class="card app-card">
+            <span class="status">Live</span>
+            <h3>On-site septic design</h3>
+            <p><strong>What it asks for:</strong> the site inputs the septic desk uses: soils, flow, setbacks, and the local health-department criteria.</p>
+            <p><strong>What it returns:</strong> the options that still fit, the criteria that removed the others, and what a designer still has to verify.</p>
+            <p class="receives"><strong>What it does not do:</strong> check a soil log, size a final system, or produce a sealed plan.</p>
+            <p class="card-foot"><a class="button small" href="https://oss.7cloudengineering.com">Open the septic app</a></p>
+          </article>
+          <article class="card app-card">
+            <span class="status">Live</span>
+            <h3>Stormwater design</h3>
+            <p><strong>What it asks for:</strong> location, project type, areas, and the minimum requirements that apply, including any special local rule.</p>
+            <p><strong>What it returns:</strong> the threshold check, a BMP sizing pass, and a draft report you can download and edit.</p>
+            <p class="receives"><strong>What it does not do:</strong> replace the site investigation or a report signed by the responsible professional.</p>
+            <p class="card-foot"><a class="button small" href="https://storm.7cloudengineering.com">Open the storm app</a></p>
+          </article>
+        </div>
+        <p class="rule">If an app and a professional design disagree, the site investigation and the applicable code govern. The app does not.</p>
+      </div>
+    </section>
+
+    <section id="how" aria-labelledby="how-title">
+      <div class="wrap">
+        <p class="section-kicker">How a design is chosen</p>
+        <h2 id="how-title">How a design is chosen</h2>
+        <ol class="steps">
+          <li><span class="num">01</span><div><strong>Site constraints.</strong> Soils, water table, setbacks, slopes, existing improvements, and what the survey and logs actually show.</div></li>
+          <li><span class="num">02</span><div><strong>The rule that applies.</strong> The health-department, drainage, or water-quality criteria for that jurisdiction, not a generic template.</div></li>
+          <li><span class="num">03</span><div><strong>Feasible options.</strong> The system types or drainage concepts the site and the rule still allow, and the ones they remove.</div></li>
+          <li><span class="num">04</span><div><strong>One recommended concept.</strong> A single concept you can react to, chosen under a written scope.</div></li>
+          <li><span class="num">05</span><div><strong>Plans and calculations.</strong> The drawings, sizing basis, and narrative a reviewer can check.</div></li>
+        </ol>
+        <p class="fit">An app, when one is live, may help with the first three steps. Steps four and five stay with the responsible professional and a written scope.</p>
+        <div class="callout">
+          <p>We will not recommend a system type from a photo and a guess at the soils.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="receive" aria-labelledby="receive-title">
+      <div class="wrap">
+        <p class="section-kicker">What you receive</p>
+        <h2 id="receive-title">What you receive</h2>
+        <div class="receive">
+          <div>
+            <ul>
+              <li>A written scope.</li>
+              <li>A missing-information list.</li>
+              <li>A concept you can react to.</li>
+              <li>Plans and calculations.</li>
+              <li>A design narrative.</li>
+              <li>Review revisions named in the agreement.</li>
+            </ul>
+          </div>
+          <div class="aside-note">
+            <p>If you used a design app before hiring us, bring the inputs and the result. We will check them. We will not adopt them blindly.</p>
+            <p>Not included unless scoped: structural, roads, full site civil, staking, contractor selection, permit fees.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="start" aria-labelledby="start-title">
+      <div class="wrap">
+        <p class="section-kicker">Start a project</p>
+        <h2 id="start-title">Start a project</h2>
+        <p class="lede">Tell us the site and which design you need. We reply with whether the project is in our service area and what a scope would include.</p>
+        <form id="intake" novalidate>
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="role">I am</label>
+            <select id="role" name="role">
+              <option value="">Select</option>
+              <option>Owner</option>
+              <option>Builder</option>
+              <option>Architect</option>
+              <option>Other professional</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="site">Site location <span class="hint">— address, parcel, or county</span></label>
+            <input id="site" name="site" type="text" required>
+          </div>
+          <div class="field">
+            <label for="service">Design needed</label>
+            <select id="service" name="service" required>
+              <option value="">Select</option>
+              <option value="septic">On-site septic design</option>
+              <option value="stormwater">Stormwater design</option>
+              <option value="both">Both — write two scopes</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="jurisdiction">Jurisdiction, if you know it</label>
+            <input id="jurisdiction" name="jurisdiction" type="text">
+          </div>
+          <div class="field full">
+            <label for="about">What the project is</label>
+            <textarea id="about" name="about" required></textarea>
+          </div>
+          <fieldset class="field full">
+            <legend>Did you use a 7 Cloud design app?</legend>
+            <div class="choices">
+              <label><input type="radio" name="used_app" value="yes"> Yes</label>
+              <label><input type="radio" name="used_app" value="no"> No</label>
+              <label><input type="radio" name="used_app" value="none" checked> No app was available</label>
+            </div>
+          </fieldset>
+          <div class="field full">
+            <label for="app-result">If yes, which app and what result it gave</label>
+            <input id="app-result" name="app_result" type="text">
+          </div>
+          <div class="field full">
+            <button class="button" type="submit">Send the intake</button>
+          </div>
+          <p class="form-note">This form does not start paid work and does not create an engineer-client relationship. We reply with whether the project is in our service area and what a scope would include.</p>
+          <div class="form-result" id="form-result" role="status"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <h2>7 Cloud Engineering</h2>
+      <p class="footer-line">Site design for review. Septic and stormwater are live.</p>
+      <p class="footer-line"><span class="fill">[address or remote-practice line]</span> · <span class="fill">[email]</span> · <span class="fill">[phone]</span></p>
+      <p class="small-print">Services and apps are offered only as labeled. Design services are available only where the responsible professional is authorized to practice. Site content and any future app are general decision aids, not a design for your property.</p>
+    </div>
+  </footer>
+
+  <!--
+    OWNER CATALOG — not rendered. Turn a row on by adding a public card and a Live table row.
+    Do not name a discipline here until it can be prepared under the license and a defined scope.
+    | On-site septic design      | Live                    | Request a scope                            |
+    | Stormwater design          | Live                    | Request a scope                            |
+    | [Next design service]      | Not offered             | Nothing. Do not show until named.          |
+    | Septic criteria guide      | Not written yet         | Read only, after a page exists             |
+    | Stormwater criteria guide  | Not written yet         | Read only, after a page exists             |
+    | [Next design app]          | Not offered             | Nothing. Do not show until it works.       |
+    Intake is not connected. Set INTAKE_EMAIL below before publishing the form.
+  -->
+  <script>
+    const INTAKE_EMAIL = "";
+
+    const menuBtn = document.querySelector(".menu-btn");
+    const nav = document.getElementById("site-nav");
+    menuBtn.addEventListener("click", () => {
+      const open = nav.classList.toggle("open");
+      menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    nav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    document.querySelectorAll("[data-service]").forEach((link) => {
+      link.addEventListener("click", () => {
+        const select = document.getElementById("service");
+        select.value = link.dataset.service;
+      });
+    });
+
+    const form = document.getElementById("intake");
+    const result = document.getElementById("form-result");
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+      const data = new FormData(form);
+      const lines = [
+        "7 Cloud Engineering — project intake",
+        "Name: " + data.get("name"),
+        "Email: " + data.get("email"),
+        "Phone: " + (data.get("phone") || "—"),
+        "Role: " + (data.get("role") || "—"),
+        "Site: " + data.get("site"),
+        "Design needed: " + data.get("service"),
+        "Jurisdiction: " + (data.get("jurisdiction") || "—"),
+        "Project: " + data.get("about"),
+        "Used a 7 Cloud design app: " + data.get("used_app"),
+        "App and result: " + (data.get("app_result") || "—")
+      ];
+      result.classList.add("show");
+      if (!INTAKE_EMAIL) {
+        result.textContent = "This preview does not send the form. Set INTAKE_EMAIL in the page before publishing. The form still does not start paid work or create an engineer-client relationship.";
+        return;
+      }
+      const subject = encodeURIComponent("Project intake — " + data.get("service"));
+      const body = encodeURIComponent(lines.join("\n"));
+      window.location.href = "mailto:" + INTAKE_EMAIL + "?subject=" + subject + "&body=" + body;
+      result.textContent = "Your email app should open with the intake. Sending that email does not start paid work and does not create an engineer-client relationship.";
+    });
+  </script>
+</body>
+</html>
