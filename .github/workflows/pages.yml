@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: mkdir -p _site && cp index.html styles.css _site/
+      - run: mkdir -p _site && cp index.html styles.css CNAME _site/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
