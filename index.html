@@ -292,7 +292,7 @@
     | Septic criteria guide      | Not written yet         | Read only, after a page exists             |
     | Stormwater criteria guide  | Not written yet         | Read only, after a page exists             |
     | [Next design app]          | Not offered             | Nothing. Do not show until it works.       |
-    Intake is not connected. Set INTAKE_EMAIL below before publishing the form.
+    Intake is sent from the page to timothy@7cloudengineering.com. The first submission must be activated from that inbox.
   -->
   <script>
     const INTAKE_EMAIL = "timothy@7cloudengineering.com";
@@ -319,32 +319,51 @@
 
     const form = document.getElementById("intake");
     const result = document.getElementById("form-result");
-    form.addEventListener("submit", (event) => {
+    form.addEventListener("submit", async (event) => {
       event.preventDefault();
       if (!form.reportValidity()) return;
       const data = new FormData(form);
-      const lines = [
-        "7 Cloud Engineering — project intake",
-        "Name: " + data.get("name"),
-        "Email: " + data.get("email"),
-        "Phone: " + (data.get("phone") || "—"),
-        "Role: " + (data.get("role") || "—"),
-        "Site: " + data.get("site"),
-        "Design needed: " + data.get("service"),
-        "Jurisdiction: " + (data.get("jurisdiction") || "—"),
-        "Project: " + data.get("about"),
-        "Used a 7 Cloud design app: " + data.get("used_app"),
-        "App and result: " + (data.get("app_result") || "—")
-      ];
+      const submit = form.querySelector("button[type=submit]");
+      submit.disabled = true;
       result.classList.add("show");
-      if (!INTAKE_EMAIL) {
-        result.textContent = "This preview does not send the form. Set INTAKE_EMAIL in the page before publishing. The form still does not start paid work or create an engineer-client relationship.";
-        return;
+      result.textContent = "Sending…";
+      try {
+        const response = await fetch("https://formsubmit.co/ajax/" + encodeURIComponent(INTAKE_EMAIL), {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify({
+            name: data.get("name"),
+            email: data.get("email"),
+            phone: data.get("phone") || "—",
+            role: data.get("role") || "—",
+            site: data.get("site"),
+            service: data.get("service"),
+            jurisdiction: data.get("jurisdiction") || "—",
+            project: data.get("about"),
+            used_app: data.get("used_app"),
+            app_result: data.get("app_result") || "—",
+            _subject: "Project intake — " + data.get("service"),
+            _replyto: data.get("email"),
+            _template: "table",
+            _captcha: "false"
+          })
+        });
+        const payload = await response.json().catch(() => ({}));
+        const message = String(payload.message || "");
+        if (!response.ok || payload.success === false || payload.success === "false") {
+          throw new Error(message || "The form did not send.");
+        }
+        if (/activat/i.test(message)) {
+          result.textContent = "Check timothy@7cloudengineering.com and open the activation email once. After that, this form sends straight to that inbox. It still does not start paid work.";
+          return;
+        }
+        form.reset();
+        result.textContent = "Sent. We reply with whether the project is in our service area and what a scope would include. This does not start paid work or create an engineer-client relationship.";
+      } catch (error) {
+        result.textContent = "The form did not send. Email timothy@7cloudengineering.com directly. This does not start paid work or create an engineer-client relationship.";
+      } finally {
+        submit.disabled = false;
       }
-      const subject = encodeURIComponent("Project intake — " + data.get("service"));
-      const body = encodeURIComponent(lines.join("\n"));
-      window.location.href = "mailto:" + INTAKE_EMAIL + "?subject=" + subject + "&body=" + body;
-      result.textContent = "Your email app should open with the intake. Sending that email does not start paid work and does not create an engineer-client relationship.";
     });
   </script>
 </body>
