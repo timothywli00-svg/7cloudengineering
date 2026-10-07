@@ -218,10 +218,6 @@
             <input id="email" name="email" type="email" autocomplete="email" required>
           </div>
           <div class="field">
-            <label for="phone">Phone</label>
-            <input id="phone" name="phone" type="tel" autocomplete="tel">
-          </div>
-          <div class="field">
             <label for="role">I am</label>
             <select id="role" name="role">
               <option value="">Select</option>
@@ -278,7 +274,7 @@
     <div class="wrap">
       <h2>7 Cloud Engineering</h2>
       <p class="footer-line">Site design for review. Septic and stormwater are live.</p>
-      <p class="footer-line"><span class="fill">[address or remote-practice line]</span> · <span class="fill">[email]</span> · <span class="fill">[phone]</span></p>
+      <p class="footer-line"><span class="fill">[address or remote-practice line]</span> · <span class="fill">[email]</span></p>
       <p class="small-print">Services and apps are offered only as labeled. Design services are available only where the responsible professional is authorized to practice. Site content and any future app are general decision aids, not a design for your property.</p>
     </div>
   </footer>
@@ -334,7 +330,6 @@
           body: JSON.stringify({
             name: data.get("name"),
             email: data.get("email"),
-            phone: data.get("phone") || "—",
             role: data.get("role") || "—",
             site: data.get("site"),
             service: data.get("service"),
