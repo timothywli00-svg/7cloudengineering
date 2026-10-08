@@ -288,10 +288,10 @@
     | Septic criteria guide      | Not written yet         | Read only, after a page exists             |
     | Stormwater criteria guide  | Not written yet         | Read only, after a page exists             |
     | [Next design app]          | Not offered             | Nothing. Do not show until it works.       |
-    Intake is sent from the page to timothy@7cloudengineering.com. The first submission must be activated from that inbox.
+    Intake is sent from the page to info@7cloudengineering.com. The first submission must be activated from that inbox.
   -->
   <script>
-    const INTAKE_EMAIL = "timothy@7cloudengineering.com";
+    const INTAKE_EMAIL = "info@7cloudengineering.com";
 
     const menuBtn = document.querySelector(".menu-btn");
     const nav = document.getElementById("site-nav");
@@ -346,7 +346,7 @@
         const payload = await response.json().catch(() => ({}));
         const message = String(payload.message || "");
         if (/activat/i.test(message)) {
-          result.textContent = "This form is not turned on yet. Open the activation email sent to timothy@7cloudengineering.com, including the spam folder, and confirm it once. After that, the form sends on its own. It still does not start paid work.";
+          result.textContent = "This form is not turned on yet. Open the activation email sent to info@7cloudengineering.com, including the spam folder, and confirm it once. After that, the form sends on its own. It still does not start paid work.";
           return;
         }
         if (response.status === 429 || /rate limit/i.test(message)) {
@@ -360,7 +360,7 @@
         result.textContent = "Sent. We reply with whether the project is in our service area and what a scope would include. This does not start paid work or create an engineer-client relationship.";
       } catch (error) {
         const detail = error && error.message ? error.message : "";
-        result.textContent = (detail ? detail + " " : "") + "The form did not send. Email timothy@7cloudengineering.com directly. This does not start paid work or create an engineer-client relationship.";
+        result.textContent = (detail ? detail + " " : "") + "The form did not send. Email info@7cloudengineering.com directly. This does not start paid work or create an engineer-client relationship.";
       } finally {
         submit.disabled = false;
       }
