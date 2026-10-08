@@ -345,17 +345,22 @@
         });
         const payload = await response.json().catch(() => ({}));
         const message = String(payload.message || "");
+        if (/activat/i.test(message)) {
+          result.textContent = "This form is not turned on yet. Open the activation email sent to timothy@7cloudengineering.com, including the spam folder, and confirm it once. After that, the form sends on its own. It still does not start paid work.";
+          return;
+        }
+        if (response.status === 429 || /rate limit/i.test(message)) {
+          result.textContent = "The form service is busy from too many tries. Wait a few minutes and send it again. It still does not start paid work.";
+          return;
+        }
         if (!response.ok || payload.success === false || payload.success === "false") {
           throw new Error(message || "The form did not send.");
-        }
-        if (/activat/i.test(message)) {
-          result.textContent = "Check timothy@7cloudengineering.com and open the activation email once. After that, this form sends straight to that inbox. It still does not start paid work.";
-          return;
         }
         form.reset();
         result.textContent = "Sent. We reply with whether the project is in our service area and what a scope would include. This does not start paid work or create an engineer-client relationship.";
       } catch (error) {
-        result.textContent = "The form did not send. Email timothy@7cloudengineering.com directly. This does not start paid work or create an engineer-client relationship.";
+        const detail = error && error.message ? error.message : "";
+        result.textContent = (detail ? detail + " " : "") + "The form did not send. Email timothy@7cloudengineering.com directly. This does not start paid work or create an engineer-client relationship.";
       } finally {
         submit.disabled = false;
       }
